@@ -10,7 +10,7 @@ cask "claude-code-studio" do
   desc "Desktop app for Claude Code — chat, multi-agent, MCP, skills"
   homepage "https://github.com/Lexus2016/claude-code-studio"
 
-  depends_on macos: ">= :catalina"
+  depends_on macos: :catalina
 
   app "Claude Code Studio.app"
 
