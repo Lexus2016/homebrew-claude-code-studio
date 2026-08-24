@@ -1,9 +1,9 @@
 cask "claude-code-studio" do
   arch arm: "arm64", intel: "x64"
 
-  version "7.7.0"
-  sha256 arm:   "131b3de24ab2271d0369bf2c243bd16a66975ae472d824efa9a2a16fda126824",
-         intel: "02e9af9f9e6c98eb19d799bf185f15ac1395f25cfb32354acafe2d60cb59ab60"
+  version "7.8.0"
+  sha256 arm:   "7887e0cd5b5840a3ea597e1dc8bc347c60ffcb40927561e8cbc6f599808e1139",
+         intel: "75b70a0b793c41717d799585b74946a9e8064f97573f85151e7e07190bdf4cad"
 
   url "https://github.com/Lexus2016/claude-code-studio/releases/download/v#{version}/claude-code-studio-#{version}-#{arch}.dmg"
   name "Claude Code Studio"
