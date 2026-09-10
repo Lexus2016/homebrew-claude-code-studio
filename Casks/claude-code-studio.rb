@@ -19,10 +19,8 @@ cask "claude-code-studio" do
   auto_updates false
 
   # Strip quarantine so the unsigned app opens without a Gatekeeper block.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/Claude Code Studio.app"],
-                   sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Claude Code Studio.app"]
   end
 
   uninstall quit: "studio.claudecode.app"
