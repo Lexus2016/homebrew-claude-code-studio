@@ -1,24 +1,24 @@
 cask "claude-code-studio" do
-  arch arm: "arm64", intel: "x64"
-
   version "7.17.0"
-  sha256 arm:   "0a97af0a3ecb2a46ddc8501cb41c6da6c55dc39e62519eb7ff3a63a721d9b5cd",
-         intel: "b8032eabafffcb6f3b949d56ec77a4287cb5d0779a37fb3f6ee56a2b02a5ca1e"
+  sha256 "0a97af0a3ecb2a46ddc8501cb41c6da6c55dc39e62519eb7ff3a63a721d9b5cd"
 
-  url "https://github.com/Lexus2016/claude-code-studio/releases/download/v#{version}/claude-code-studio-#{version}-#{arch}.dmg"
+  url "https://github.com/Lexus2016/claude-code-studio/releases/download/v#{version}/claude-code-studio-#{version}-arm64.dmg"
   name "Claude Code Studio"
   desc "Desktop app for Claude Code — chat, multi-agent, MCP, skills"
   homepage "https://github.com/Lexus2016/claude-code-studio"
 
-  depends_on macos: :big_sur
+  depends_on arch: :arm64
+  depends_on macos: :monterey
 
   app "Claude Code Studio.app"
 
-  # The app updates itself in-app via `brew upgrade --cask` (no Sparkle/Squirrel),
-  # so let brew manage the version normally.
+  # TRANSITIONAL — retire ~2026-10-28 (docs/electron-desktop/MAC-SIGNING.md in the app repo).
+  # Releases before the signed one update by running `brew upgrade --cask`; this cask is
+  # how they reach it. Later releases update themselves (signed, Squirrel.Mac).
+  # auto_updates stays false so a plain `brew upgrade` still moves those installs forward.
   auto_updates false
 
-  # Strip quarantine so the unsigned app opens without a Gatekeeper block.
+  # Harmless on the signed app; kept while the cask can still point at an unsigned release.
   postflight_steps do
     run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Claude Code Studio.app"]
   end

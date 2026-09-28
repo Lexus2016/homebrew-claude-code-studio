@@ -9,8 +9,13 @@ macOS desktop app (a native window around the full Studio — chat, Kanban, agen
 brew install --cask Lexus2016/claude-code-studio/claude-code-studio
 ```
 
-Works on Apple Silicon and Intel. Updates happen **in-app** (the app runs
-`brew upgrade --cask claude-code-studio` for you), or run that command yourself.
+Apple Silicon only.
+
+> **This tap is transitional and will be retired about a month after v7.18.0.**
+> From v7.18.0 the app is a signed, notarized `.dmg` on
+> [GitHub Releases](https://github.com/Lexus2016/claude-code-studio/releases/latest) and updates
+> itself. Versions before it update by running `brew upgrade --cask claude-code-studio` — that is
+> the one thing this tap is kept for.
 
 **Prerequisite:** the [Claude Code CLI](https://docs.anthropic.com/en/claude-code) installed and
 logged in (Claude Pro or Max). The app detects it on first launch.
