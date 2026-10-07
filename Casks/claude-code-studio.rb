@@ -1,6 +1,6 @@
 cask "claude-code-studio" do
-  version "7.18.3"
-  sha256 "55b08d924d5648a5bb85c4fc1a852164c56225beda8be4fb7833238688c16cb5"
+  version "7.18.4"
+  sha256 "942845e2783de9bba9b78cda549809f4889c092edfa4b185a3253ae2d947a074"
 
   url "https://github.com/Lexus2016/claude-code-studio/releases/download/v#{version}/claude-code-studio-#{version}-arm64.dmg"
   name "Claude Code Studio"
